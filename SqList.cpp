@@ -65,3 +65,5 @@ int main(){
 	}
 	return 0;
 }
+//I just want to try somthing new.
+//Everything all right.Dont't worry.
