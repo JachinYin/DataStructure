@@ -1,0 +1,77 @@
+创建一个新的文件夹
+	mkdir newdir
+进入新的文件夹
+	cd newdir
+创建md文件
+	touch README.md
+
+初始化仓库
+	git init
+
+仓库建立成功接着就可以随便折腾了
+
+===更新{
+
+想要提交代码到github的项目，必须要授权
+github采用的是ssh认证的方式
+在git bash下输入ssh可以查看安装与否
+没有，则指定RSA算法生成密钥
+ssh-keygen -t rsa
+连续三个回车，其间不需要设置密码
+win下c/Doucuments and Settings/.ssh路径下生成
+	公钥id_rsa.pub和密钥id_rsa
+接下来将公钥里的内容添加到github的个人账户上
+具体操作：github个人账户，
+	settings/ssh and GPG keys/new SSH key/key(复制粘贴)/Add SSH key
+title栏可以不填写
+
+添加后输入命令
+	ssh -T git@githubcom	
+
+提交代码前要设置好邮箱和用户名
+	git config --global user.name
+	回车后输入"用户名"
+	git donfig --global user.email
+	回车后输入"邮箱地址"
+}===
+
+常用命令如下
+1.查看仓库状态
+	git status 
+2.添加文件至缓冲(这一步可避免误提交)
+	git add 文件名
+3.提交文件至github
+	git commit
+4.查看操作记录
+	git log
+5.分支
+	创建分支
+		git branch 分支名
+	切换分支
+		git checkout 分支名
+	创建分支并切换
+		git checkout -b 分支名
+	合并分支(先要切换至master分支)
+		git merge 分支名
+	删除分支
+		git branch -d 分支名
+6.创建标签
+	git tag 标签名(v1.0)
+7.切换标签
+	git checkout 标签名
+8.把本地代码推到远程仓库master分支上，commit后再执行
+	git push origin master
+9.将别人的代码拉到本地master分支上
+  (这俩命令一般先pull后push,避免冲突)
+	git pull origin master
+10.克隆项目到本地，得到的文件夹就是一个git仓库，无需init
+	git clone git@github.com:你的github项目地址.git
+		举例：你的github项目地址=JachinYin/gitlearn
+11.添加一个远程仓库，简单说就是把本地已有的项目仓库
+  完全复制到远程的空仓库里边去
+  	git remote add origin 远程仓库地址
+  		远程仓库地址=git@github.com:JachYin/gitlearn.git
+  		origin是默认一个远程仓库时的名字，可随便改
+12.查看当前项目有哪些远程仓库
+	git remote -v
+13.
